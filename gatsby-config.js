@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env",
+});
+
 module.exports = {
   siteMetadata: {
     title: `courtdesignsinc`,
@@ -6,8 +10,8 @@ module.exports = {
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "jGmCeNZfmUkBmS_CZB-8L44kGxnsVdENwa8VcPWqAx0",
-      "spaceId": ""
+      "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
+      "spaceId": process.env.CONTENTFUL_SPACE_ID
     }
   }, "gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
