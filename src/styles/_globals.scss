@@ -1,0 +1,45 @@
+body {
+  font-family: $font;
+  margin: 0;
+}
+
+@each $k, $v in $headers {
+  #{$k} {
+    font-size: $v;
+    margin: 0;
+  }
+}
+
+@each $k, $v in $sizes {
+  .#{$k} {
+    font-size: $v;
+  }
+}
+
+@each $k, $v in $weights {
+  .#{$k} {
+    font-weight: $v;
+  }
+}
+
+@each $k, $v in $colors {
+  .#{$k} {
+    color: $v;
+  }
+
+  .bg-#{$k} {
+    background-color: $v;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: $thick;
+  color: $black;
+  opacity: .5;
+  transition: $trans;
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,62 @@
+// FONTS
+
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$font: "Gentium Plus", serif;
+
+$xlg: 4rem;
+$lg: 2rem;
+$md: 1rem;
+$sm: .75rem;
+
+$sizes: (
+  xlg: $xlg,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+);
+
+$headers: (
+  h1: $xlg,
+  h2: $lg,
+  h3: $md,
+  p: $sm,
+);
+
+$thin: 400;
+$thick: 700;
+
+$weights: (
+  thick: $thick,
+  thin: $thin,
+);
+
+// COLORS
+
+$black: #000;
+$white: #fff;
+$muted: rgba(0, 0, 0, 0.3);
+$green: #8CB369;
+$teal: #5B8E7D;
+$red: #BC4B51;
+
+
+$colors: (
+  black: $black,
+  white: $white,
+  green: $green,
+  teal: $teal,
+  red: $red,
+);
+
+// SPACING
+
+$gxlg: 2.5rem;
+$glg: 1.5rem;
+$gmd: 1rem;
+$gsm: 0.875rem;
+$gxsm: 0.5rem;
+
+// TRANSITIONS
+$t: .15s;
+$trans: all $t ease-in-out;

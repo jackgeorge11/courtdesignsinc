@@ -1,0 +1,70 @@
+.home {
+  .row {
+    display: flex;
+    width: 100%;
+
+    .uno {
+      width: calc(40% - #{$gxsm});
+      padding: 0 $gxsm $gxsm 0;
+    }
+
+    .dos {
+      width: 60%;
+      display: flex;
+      padding: 0 0 $gxsm;
+
+      .half {
+        width: calc(50% - #{$gxsm * 0.5});
+        @include flex($fd: column, $jc: flex-start);
+
+        .filler {
+          content: " ";
+          width: 100%;
+          display: flex;
+          flex: 1;
+          opacity: 0.5;
+          margin: $gxsm 0 0;
+        }
+
+        &.first {
+          margin: 0 $gxsm 0 0;
+
+          .filler {
+            margin: 0 0 $gxsm;
+          }
+        }
+      }
+
+      &.vert {
+        flex-direction: column;
+
+        .half {
+          width: 100%;
+        }
+      }
+    }
+
+    &.rev {
+      flex-direction: row-reverse;
+
+      .uno {
+        padding: 0 0 $gxsm $gxsm;
+      }
+
+      .dos {
+        width: 60%;
+        display: flex;
+        padding: 0 0 $gxsm;
+
+        .half {
+          width: calc(50% - #{$gxsm * 0.5});
+          margin: 0 0 0 $gxsm;
+
+          &.first {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
