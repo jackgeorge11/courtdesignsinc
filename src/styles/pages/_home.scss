@@ -6,12 +6,20 @@
     .uno {
       width: calc(40% - #{$gxsm});
       padding: 0 $gxsm $gxsm 0;
+
+      &.modulo {
+        width: calc(50% - #{$gxsm});
+      }
     }
 
     .dos {
       width: 60%;
       display: flex;
       padding: 0 0 $gxsm;
+
+      &.modulo {
+        width: 50%;
+      }
 
       .half {
         width: calc(50% - #{$gxsm * 0.5});
@@ -33,12 +41,8 @@
             margin: 0 0 $gxsm;
           }
         }
-      }
 
-      &.vert {
-        flex-direction: column;
-
-        .half {
+        &.modulo {
           width: 100%;
         }
       }
@@ -52,12 +56,10 @@
       }
 
       .dos {
-        width: 60%;
         display: flex;
         padding: 0 0 $gxsm;
 
         .half {
-          width: calc(50% - #{$gxsm * 0.5});
           margin: 0 0 0 $gxsm;
 
           &.first {
