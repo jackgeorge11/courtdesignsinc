@@ -1,27 +1,79 @@
+.header-nav {
+  width: calc(100% - #{$gxsm * 2});
+  background-color: white;
+  position: sticky;
+  top: 0;
+  padding: $gxsm $gxsm 0;
+  display: none;
+
+  a {
+    font-size: $md;
+    color: $black;
+    opacity: 0.5;
+    transition: $trans;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.is--active {
+      opacity: 1;
+    }
+  }
+
+  @include media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .layout {
   position: relative;
   display: flex;
 
   .left {
-    width: calc(70vw - #{$gxsm * 2});
+    width: calc(100vw - #{$gxsm * 2} - 15rem);
     padding: $gxsm;
+
+    @include media {
+      width: calc(100vw - #{$gxsm * 2});
+    }
   }
 
   .right {
-    width: 30vw;
+    width: 15rem;
     height: 100vh;
     position: fixed;
     right: 0;
     top: 0;
     @include flex($fd: column, $ai: flex-end, $jc: space-between);
+    background-color: white;
+    transition: transform $t;
 
     nav {
       @include flex($fd: column, $ai: flex-end);
       padding: $gxsm;
       margin-top: $gxlg;
 
+      h2 {
+        word-wrap: break-word;
+        text-align: end;
+      }
+
       a {
         font-size: $md;
+        color: $black;
+        opacity: 0.5;
+        transition: $trans;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.is--active {
+          opacity: 1;
+        }
       }
     }
 
@@ -29,6 +81,15 @@
       padding: $gxsm;
       margin-bottom: $gxlg;
       color: $muted;
+    }
+
+    @include media {
+      transform: translateX(15rem);
+      top: $md + $gxsm * 3 - 0.1rem;
+
+      &.is-active {
+        transform: translateX(0);
+      }
     }
   }
 }

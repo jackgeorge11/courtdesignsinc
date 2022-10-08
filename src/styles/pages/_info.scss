@@ -1,0 +1,40 @@
+.info {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  * {
+    max-width: 50rem;
+  }
+
+  h1 {
+    margin: $gsm 0;
+  }
+
+  h2 {
+    line-height: $md * 1.3;
+    margin: $gxsm 0;
+  }
+
+  a {
+    color: $black;
+    opacity: 0.5;
+    transition: $trans;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .colors {
+    display: flex;
+    margin-top: $gsm;
+
+    .box {
+      content: " ";
+      height: 0.8rem;
+      margin-right: $gxsm;
+    }
+  }
+}

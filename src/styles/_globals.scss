@@ -1,12 +1,15 @@
 body {
   font-family: $font;
   margin: 0;
+  scroll-behavior: smooth;
+  color: $black;
 }
 
 @each $k, $v in $headers {
   #{$k} {
     font-size: $v;
     margin: 0;
+    font-weight: $thin;
   }
 }
 
@@ -23,11 +26,11 @@ body {
 }
 
 @each $k, $v in $colors {
-  .#{$k} {
+  .#{"" + $k} {
     color: $v;
   }
 
-  .bg-#{$k} {
+  .bg-#{"" + $k} {
     background-color: $v;
   }
 }
@@ -35,11 +38,4 @@ body {
 a {
   text-decoration: none;
   font-weight: $thick;
-  color: $black;
-  opacity: .5;
-  transition: $trans;
-
-  &:hover {
-    opacity: 1;
-  }
 }

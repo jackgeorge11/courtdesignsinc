@@ -4,8 +4,8 @@
 
 $font: "Gentium Plus", serif;
 
-$xlg: 4rem;
-$lg: 2rem;
+$xlg: 1.875rem;
+$lg: 1.3rem;
 $md: 1rem;
 $sm: 0.75rem;
 
@@ -35,11 +35,10 @@ $weights: (
 
 $black: #332414;
 $white: #f7fee9;
-// $muted: rgba($black, 0.3);
-$muted: $white;
 $blue: #678f8e;
 $beige: #e6e2c1;
 $grey: #8c9a92;
+$muted: rgba($grey, 0.5);
 
 $colors: (
   black: $black,

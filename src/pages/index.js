@@ -1,22 +1,20 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Layout from "../components/Layout";
-import Collage from "../tools/Collage";
+import Collage from "../components/Collage";
+import shuffle from "../tools/shuffle";
 
 export default function Index() {
-  const { allContentfulHomePageContent } = useStaticQuery(graphql`
-    query MyQuery {
-      allContentfulHomePageContent {
+  const { allContentfulAsset } = useStaticQuery(graphql`
+    query IndexQuery {
+      allContentfulAsset {
         nodes {
-          image {
-            gatsbyImageData
-            width
-            height
-          }
-          slug
+          gatsbyImageData(placeholder: DOMINANT_COLOR)
+          height
+          width
+          title
         }
       }
     }
@@ -24,38 +22,17 @@ export default function Index() {
 
   const [media, setMedia] = useState([]);
 
-  function shuffle(array) {
-    let currentIndex = array.length,
-      randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
-    }
-
-    return array;
-  }
-
-  console.log(allContentfulHomePageContent.nodes);
-
   useEffect(() => {
-    setMedia(shuffle(allContentfulHomePageContent.nodes));
-  }, [allContentfulHomePageContent]);
+    setMedia(shuffle(allContentfulAsset.nodes));
+  }, [allContentfulAsset]);
 
   return (
     <Layout page="home">
-      {media.length &&
-        [...Array(Math.floor(media.length / 3))].map((n, i) =>
-          Collage(i, media)
-        )}
+      {media.length
+        ? [...Array(Math.floor(media.length / 3))].map((n, i) => (
+            <Collage i={i} media={media} />
+          ))
+        : null}
     </Layout>
   );
 }

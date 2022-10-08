@@ -1,0 +1,13 @@
+.portfolio {
+  .wrapper {
+    margin: 0 0 $gxsm;
+    .gatsby-image-wrapper {
+      max-height: calc(100vh - #{$gxsm * 2});
+      width: fit-content;
+
+      * {
+        width: fit-content;
+      }
+    }
+  }
+}
