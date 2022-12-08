@@ -11,6 +11,7 @@ export default function Index() {
     query IndexQuery {
       allContentfulAsset {
         nodes {
+          id
           gatsbyImageData(placeholder: DOMINANT_COLOR)
           height
           width

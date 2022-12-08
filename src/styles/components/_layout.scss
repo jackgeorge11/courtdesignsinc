@@ -3,8 +3,10 @@
   background-color: white;
   position: sticky;
   top: 0;
-  padding: $gxsm $gxsm 0;
+  padding: $gxsm;
   display: none;
+  z-index: 1000;
+  background-color: white;
 
   a {
     font-size: $md;
@@ -38,6 +40,7 @@
 
     @include media {
       width: calc(100vw - #{$gxsm * 2});
+      padding-top: 0;
     }
   }
 

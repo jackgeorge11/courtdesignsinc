@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
@@ -30,7 +30,7 @@ export default function Collage({ i, media, setPreview }) {
               delay: Math.floor(Math.random() * 3) * 0.15,
             }}
           >
-            <Link to={`/portfolio#${images[0].title.replace(/\s/g, "")}`}>
+            <Link to={`/portfolio/${images[0].id}`}>
               <GatsbyImage image={getImage(images[0])} />
             </Link>
           </motion.span>
@@ -63,7 +63,7 @@ export default function Collage({ i, media, setPreview }) {
                 delay: Math.floor(Math.random() * 3) * 0.1,
               }}
             >
-              <Link to={`/portfolio#${images[0].title.replace(/\s/g, "")}`}>
+              <Link to={`/portfolio/${images[0].id}`}>
                 <GatsbyImage image={getImage(images[1])} />
               </Link>
             </motion.span>
@@ -81,7 +81,7 @@ export default function Collage({ i, media, setPreview }) {
                 delay: Math.floor(Math.random() * 3) * 0.1,
               }}
             >
-              <Link to={`/portfolio#${images[0].title.replace(/\s/g, "")}`}>
+              <Link to={`/portfolio/${images[0].id}`}>
                 <GatsbyImage image={getImage(images[2])} />
               </Link>
             </motion.span>
