@@ -63,7 +63,7 @@ export default function Collage({ i, media, setPreview }) {
                 delay: Math.floor(Math.random() * 3) * 0.1,
               }}
             >
-              <Link to={`/portfolio/${images[0].id}`}>
+              <Link to={`/portfolio/${images[1].id}`}>
                 <GatsbyImage image={getImage(images[1])} />
               </Link>
             </motion.span>
@@ -81,7 +81,7 @@ export default function Collage({ i, media, setPreview }) {
                 delay: Math.floor(Math.random() * 3) * 0.1,
               }}
             >
-              <Link to={`/portfolio/${images[0].id}`}>
+              <Link to={`/portfolio/${images[2].id}`}>
                 <GatsbyImage image={getImage(images[2])} />
               </Link>
             </motion.span>
