@@ -7,25 +7,22 @@ import Collage from "../components/Collage";
 import shuffle from "../tools/shuffle";
 
 export default function Index() {
-  const { allContentfulAsset } = useStaticQuery(graphql`
+  const { allContentfulHomePageContent } = useStaticQuery(graphql`
     query IndexQuery {
-      allContentfulAsset {
+      allContentfulHomePageContent {
         nodes {
-          id
-          gatsbyImageData(placeholder: DOMINANT_COLOR)
-          height
-          width
-          title
+          media {
+            gatsbyImageData(placeholder: DOMINANT_COLOR)
+            id
+            width
+            height
+          }
         }
       }
     }
   `);
 
-  const [media, setMedia] = useState([]);
-
-  useEffect(() => {
-    setMedia(shuffle(allContentfulAsset.nodes));
-  }, [allContentfulAsset]);
+  const media = allContentfulHomePageContent.nodes[0].media;
 
   return (
     <Layout page="home">
